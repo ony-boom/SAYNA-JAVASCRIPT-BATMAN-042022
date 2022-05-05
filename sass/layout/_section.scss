@@ -1,0 +1,176 @@
+section {
+  color: $color-neutral-white;
+
+  .row {
+    padding: 10rem 5.6rem 5.6rem 5.6rem;
+  }
+}
+
+.section-slider {
+  height: 46rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: imageSlider 60s alternate-reverse infinite ease-in-out;
+
+  .row {
+    height: 100%;
+  }
+}
+
+.section-multimedia {
+  .slider {
+    position: relative;
+  }
+
+  &__slide-changer {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+  }
+
+  #prev-slide {
+    left: 0;
+  }
+
+  #next-slide {
+    right: 0;
+  }
+
+  .video-slider {
+    display: flex;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+
+    & > * {
+      flex-shrink: 0;
+      flex-grow: 1;
+      flex-basis: 100%;
+      padding: 2.4rem 0;
+    }
+
+    &__slide {
+      width: 60%;
+      display: flex;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      font-weight: 300;
+      gap: 1rem;
+      border-radius: 1.3rem;
+      background: $color-linear-bg;
+      overflow: hidden;
+      scroll-snap-align: center;
+
+      &__img {
+        width: 40%;
+        background-size: cover;
+        background-position: center;
+
+        &--1 {
+          background-image: url("../assets/images/illustrations/Home/Bathome8.png");
+        }
+
+        &--2 {
+          background-image: url("../assets/images/illustrations/Home/Bathome10_slide_ba.png");
+        }
+
+        &--3 {
+          background-image: url("../assets/images/illustrations/Home/Bathome11_slide_ba.png");
+        }
+      }
+
+      &__about {
+        padding: 1.4rem;
+        display: grid;
+        gap: 5px;
+
+        .genre {
+          opacity: .8;
+        }
+
+        .genre, .tittle {
+          text-transform: uppercase;
+        }
+
+        .simple-paragraph {
+          margin-top: 1.2rem;
+        }
+      }
+    }
+  }
+
+  .video-trailer {
+    margin-top: 5.6rem;
+
+    & > * {
+      width: 100%;
+    }
+  }
+}
+
+.section-form {
+  background: $color-linear-bg;
+
+  .titles {
+    text-align: center;
+  }
+
+  form {
+    display: grid;
+    gap: 4.8rem;
+    width: 60%;
+    margin: 5.6rem auto 0 auto;
+
+    .form-group:last-child {
+      text-align: center;
+    }
+  }
+}
+
+.section-quotes {
+  .quotes-box {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+
+    &__quote {
+      display: flex;
+      overflow: hidden;
+      margin-bottom: 3.2rem;
+
+      blockquote {
+        flex-grow: 1;
+        font-size: 2.2rem;
+        line-height: 160%;
+
+        cite {
+          display: block;
+          font-style: normal;
+          color: $color-neutral-light-gray;
+          font-size: 1.4rem;
+          margin-top: 2.4rem;
+        }
+      }
+    }
+
+    &__navigation {
+      a:link, &:visited {
+        text-decoration: none;
+
+        input {
+          appearance: none;
+          -webkit-appearance: none;
+          height: 1.6rem;
+          width: 1.6rem;
+          background-color: transparent;
+          border: solid 1px $color-secondary-blue;
+          border-radius: 50%;
+          transition: all .3s;
+
+          &:checked {
+            background-color: $color-secondary-blue;
+          }
+        }
+      }
+    }
+  }
+}
