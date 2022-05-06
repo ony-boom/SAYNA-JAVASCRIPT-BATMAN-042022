@@ -1,0 +1,43 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+  background-color: #121212;
+  @include animate(zoomIn, false, 0);
+
+  &__backdrop {
+    width: 100%;
+    height: 100%;
+    background: $color-linear-bg;
+    display: grid;
+    place-items: center;
+    backdrop-filter: blur(32px);
+  }
+
+  &__dialog {
+    display: grid;
+    place-items: center;
+    height: 60%;
+    width: 70%;
+    background: $color-linear-bg;
+    border-radius: 4rem;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 500;
+    backdrop-filter: blur(22px);
+    text-align: center;
+  }
+}
+
+.remove {
+  @include animate(dezoomIn, false, 0);
+}
+
+.hidden {
+  display: none;
+}

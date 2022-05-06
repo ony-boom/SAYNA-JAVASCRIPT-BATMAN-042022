@@ -20,4 +20,7 @@ body {
   border: $subtle-border;
   border-block: none;
   overflow: hidden;
+  @include media(mobile) {
+    border: none;
+  }
 }

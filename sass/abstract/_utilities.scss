@@ -19,5 +19,17 @@
 }
 
 .u-animate-paragraph {
-  @include animate(bottomToTop);
+  @include animate(bottomToTop, false, 0);
+}
+
+.u-animate-title {
+  @include animate(leftToRight, false, 0);
+}
+
+.u-animate-image {
+  @include animate(zoomIn, false, 0);
+}
+
+.u-animate-normal {
+  @include animate(fadeIn, false, 0)
 }

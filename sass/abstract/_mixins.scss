@@ -1,3 +1,24 @@
-@mixin animate($name) {
-  animation: $name .8s ease-in-out both;
+@mixin animate($name, $haveDelay: false, $delay) {
+  animation: $name .4s ease-out both;
+  backface-visibility: hidden;
+
+  @if ($haveDelay) {
+    animation-delay: $delay;
+  }
+}
+
+@mixin media($breakpoints) {
+  @if ($breakpoints == first-break) {
+    @media only screen and (max-width: 48em) {
+      @content;
+    }
+  } @else if ($breakpoints == second-break) {
+    @media only screen and (max-width: 36em) {
+      @content;
+    }
+  } @else if ($breakpoints == mobile) {
+    @media only screen and (max-width: 23.75em) {
+      @content;
+    }
+  }
 }

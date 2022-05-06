@@ -1,492 +1,648 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-      name="viewport"
-    />
-    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
-    <link
-      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="assets/images/logos/logohome.png"
-      rel="shortcut icon"
-      type="image/png"
-    />
-    <link href="css/style.css" rel="stylesheet" />
+<head>
+  <meta charset="UTF-8"/>
+  <meta
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    name="viewport"
+  />
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <link
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="assets/images/logos/logohome.png"
+    rel="shortcut icon"
+    type="image/png"
+  />
+  <link href="css/style.css" rel="stylesheet"/>
+  <script defer src="script/app.js"></script>
+  <title>BATMAN</title>
+</head>
+<body class="u-bg-dark">
+<div class="modal hidden" id="modal">
+  <div class="modal__backdrop" id="modal-backdrop">
+    <div class="modal__dialog">
+      <p>
+        Message Reçu! <br>
+        <small style="font-size: 1.2rem; text-transform: capitalize">
+          click anywhere to exit this.
+        </small>
+      </p>
+    </div>
+  </div>
+</div>
+<header class="header header--home">
+  <div class="row">
+    <div class="scrollBar">
+      <div class="scrollBar__top-image">
+        <svg preserveAspectRatio="xMidYMid meet"
+             version="1.0" viewBox="0 0 1185.000000 679.000000"
+             xmlns="http://www.w3.org/2000/svg">
+          
+          <g fill="#fff"
+             stroke="none" transform="translate(0.000000,679.000000) scale(0.100000,-0.100000)">
+            <path d="M182 6612 c1064 -1088 1776 -2310 1939 -3328 12 -76 25 -142 28 -146
+3 -4 53 -17 111 -29 506 -104 1112 -368 1620 -704 824 -545 1466 -1277 1955
+-2227 l91 -177 73 147 c771 1548 2130 2652 3665 2979 l40 9 13 89 c147 1031
+872 2291 1947 3383 l180 183 -319 -109 c-176 -60 -915 -311 -1642 -558 l-1322
+-449 -22 -90 c-92 -382 -474 -1135 -846 -1667 -304 -435 -568 -678 -736 -678
+-156 1 -261 220 -317 660 -30 232 -40 446 -41 845 l0 360 -19 -85 c-88 -415
+-416 -830 -655 -830 -244 0 -582 431 -660 841 -8 46 -16 84 -18 85 -1 1 0
+-140 1 -314 11 -1013 -114 -1562 -356 -1562 -199 0 -526 335 -897 920 -323
+509 -620 1130 -690 1442 l-16 73 -1237 420 c-680 231 -1418 482 -1640 557
+l-404 137 174 -177z"/>
+          </g>
+        </svg>
+      </div>
+      
+      <nav class="scrollBar__nav">
+        <ul class="scrollBar__nav__list">
+          <li class="scrollBar__nav__list__item">
+            <a href="#"><i class="lab la-twitter"></i></a>
+          </li>
+          <li class="scrollBar__nav__list__item">
+            <a href="#"> <i class="lab la-facebook"></i></a>
+          </li>
+          <li class="scrollBar__nav__list__item">
+            <a href="#"> <i class="lab la-instagram"></i></a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="scrollBar__bottom-image">
+        <svg preserveAspectRatio="xMidYMid meet"
+             version="1.0" viewBox="0 0 1185.000000 679.000000"
+             xmlns="http://www.w3.org/2000/svg">
+          
+          <g fill="#fff"
+             stroke="none" transform="translate(0.000000,679.000000) scale(0.100000,-0.100000)">
+            <path d="M182 6612 c1064 -1088 1776 -2310 1939 -3328 12 -76 25 -142 28 -146
+3 -4 53 -17 111 -29 506 -104 1112 -368 1620 -704 824 -545 1466 -1277 1955
+-2227 l91 -177 73 147 c771 1548 2130 2652 3665 2979 l40 9 13 89 c147 1031
+872 2291 1947 3383 l180 183 -319 -109 c-176 -60 -915 -311 -1642 -558 l-1322
+-449 -22 -90 c-92 -382 -474 -1135 -846 -1667 -304 -435 -568 -678 -736 -678
+-156 1 -261 220 -317 660 -30 232 -40 446 -41 845 l0 360 -19 -85 c-88 -415
+-416 -830 -655 -830 -244 0 -582 431 -660 841 -8 46 -16 84 -18 85 -1 1 0
+-140 1 -314 11 -1013 -114 -1562 -356 -1562 -199 0 -526 335 -897 920 -323
+509 -620 1130 -690 1442 l-16 73 -1237 420 c-680 231 -1418 482 -1640 557
+l-404 137 174 -177z"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    
+    <nav class="navigation">
+      <div class="navigation__brand">
+        <svg fill="#fff" viewBox="0 0 726 252.17" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M483.92 0S481.38 24.71 466 40.11c-11.74 11.74-24.09 12.66-40.26 15.07-9.42 1.41-29.7 3.77-34.81-.79-2.37-2.11-3-21-3.22-27.62-.21-6.92-1.36-16.52-2.82-18-.75 3.06-2.49 11.53-3.09 13.61S378.49 34.3 378 36a85.13 85.13 0 0 0-30.09 0c-.46-1.67-3.17-11.48-3.77-13.56s-2.34-10.55-3.09-13.61c-1.45 1.45-2.61 11.05-2.82 18-.21 6.67-.84 25.51-3.22 27.62-5.11 4.56-25.38 2.2-34.8.79-16.16-2.47-28.51-3.39-40.21-15.13C244.57 24.71 242 0 242 0H0s69.52 22.74 97.52 68.59c16.56 27.11 14.14 58.49 9.92 74.73C170 140 221.46 140 273 158.57c69.23 24.93 83.2 76.19 90 93.6 6.77-17.41 20.75-68.67 90-93.6 51.54-18.56 103-18.59 165.56-15.25-4.21-16.24-6.63-47.62 9.93-74.73C656.43 22.74 726 0 726 0z"/>
+        </svg>
+      </div>
+      
+      <div class="navigation--mobile">
+        <i class="las la-bars" id="ham-menu"></i>
+      </div>
+      
+      <div class="navigation__nav">
+        <ul class="navigation__nav__list">
+          <li class="navigation__nav__list__item">
+            <a href="#">Home</a>
+          </li>
+          
+          <li class="navigation__nav__list__item">
+            <a href="#">Game</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="headings">
+      <p class="headings__paragraph">
+        Au nom de ses parents assassinés, Bruce Wayne mène une guerre
+        éternelle contre les criminels de Gotham City. Il est vengeur. Il
+        est la nuit. <br/>
+        <span class="u-text-bigger u-text-bolder">Il est Batman.</span>
+      </p>
+      
+      <div class="headings__button-box">
+        <button class="btn btn-primary">voir le héro</button>
+        <button class="btn btn-primary">Les adversaires</button>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <i class="las la-angle-down"></i>
+    </div>
+  </div>
+</header>
 
-    <script defer src="script/app.js"></script>
-    <title>BATMAN</title>
-  </head>
-  <body class="u-bg-dark">
-    <header class="header header--home">
-      <div class="row">
-        <nav class="navigation">
-          <div class="navigation__brand">
-            <img alt="brand logo" src="assets/images/logos/logohome.png" />
-          </div>
-
-          <div class="navigation__nav">
-            <ul class="navigation__nav__list">
-              <li class="navigation__nav__list__item">
-                <a href="#">Home</a>
-              </li>
-
-              <li class="navigation__nav__list__item">
-                <a href="#">Game</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-
-        <div class="headings">
-          <p class="headings__paragraph">
-            Au nom de ses parents assassinés, Bruce Wayne mène une guerre
-            éternelle contre les criminels de Gotham City. Il est vengeur. Il
-            est la nuit. <br />
-            <span class="u-text-bigger u-text-bolder">Il est Batman.</span>
-          </p>
-
-          <div class="headings__button-box">
-            <button class="btn btn-primary">voir le héro</button>
-            <button class="btn btn-primary">Les adversaires</button>
+<main>
+  <section class="section-cinema u-bg-dark">
+    <div class="row">
+      <h2 class="titles">Batman Au cinéma</h2>
+      
+      <p class="simple-paragraph u-text-margin-top subtitle">
+        Le personnage de Batman est un super héros de l’univers de DC
+        Comics. Il a été créé par le dessinateur Bob Kane et le scénariste
+        Bill Finger et apparaît pour la première fois dans le comic book
+        Detective Comics en 1939. Batman se différencie de Superman, alors
+        héros majeur de DC, car il n’a aucun pouvoir. Il sera porté au
+        cinema pour la première fois en 1943 par Lewis Wilson et bénéficiera
+        de nombreux reboot, donnant l’occasion à de multiples acteurs
+        d’interpréter l’homme chauve souris. Voici les trois derniers :
+      </p>
+      
+      <div class="showcases">
+        <div class="showcases__card">
+          <img
+            alt="Batman"
+            src="assets/images/illustrations/Home/Bathome2.png"
+          />
+          <div class="showcases__actor">
+            <figure>
+              <img
+                alt="Robert Pattinson"
+                src="assets/images/illustrations/Home/Robert_Pattinson.png"
+              />
+              
+              <figcaption>
+                Robert Pattinson <br/>
+                <small class="u-text-secondary">2022</small>
+              </figcaption>
+            </figure>
           </div>
         </div>
-        <div class="scroll-indicator">
-          <i class="las la-angle-down"></i>
+        
+        <div class="showcases__card">
+          <img
+            alt="Batman"
+            src="assets/images/illustrations/Home/Bathome3.png"
+          />
+          <div class="showcases__actor">
+            <figure>
+              <img
+                alt="Robert Pattinson"
+                src="assets/images/illustrations/Home/Christian_Bale.png"
+              />
+              
+              <figcaption>
+                Christian Bale <br/>
+                <small class="u-text-secondary">2006-2008-2012</small>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        
+        <div class="showcases__card">
+          <img
+            alt="Batman"
+            src="assets/images/illustrations/Home/Bathome4.png"
+          />
+          <div class="showcases__actor">
+            <figure>
+              <img
+                alt="Robert Pattinson"
+                src="assets/images/illustrations/Home/Ben_Affleck.png"
+              />
+              
+              <figcaption>
+                Ben Affleck <br/>
+                <small class="u-text-secondary">2016-2017/2020-2023</small>
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </div>
-    </header>
-
-    <main>
-      <section class="section-cinema u-bg-dark">
-        <div class="row">
-          <h2 class="titles">Batman Au cinéma</h2>
-
-          <p class="simple-paragraph u-text-margin-top">
-            Le personnage de Batman est un super héros de l’univers de DC
-            Comics. Il a été créé par le dessinateur Bob Kane et le scénariste
-            Bill Finger et apparaît pour la première fois dans le comic book
-            Detective Comics en 1939. Batman se différencie de Superman, alors
-            héros majeur de DC, car il n’a aucun pouvoir. Il sera porté au
-            cinema pour la première fois en 1943 par Lewis Wilson et bénéficiera
-            de nombreux reboot, donnant l’occasion à de multiples acteurs
-            d’interpréter l’homme chauve souris. Voici les trois derniers :
-          </p>
-
-          <div class="showcases">
-            <div class="showcases__card">
+    </div>
+  </section>
+  
+  <section class="section-slider u-bg-dark">
+    <div class="row"></div>
+  </section>
+  
+  <section class="section-nemesis u-bg-dark">
+    <div class="row">
+      <h2 class="titles">NÉMÉSIS</h2>
+      
+      <p class="simple-paragraph u-text-margin-top subtitle">
+        Batman souhaite éradiquer la criminalité de Gotham. C’est pourquoi,
+        il affrontera la plupart du temps, des vilains sans capacités
+        surnaturelles mais particulièrement violents ou psychopathes. Avec
+        son introduction dans la Justice League il aura l’occasion de se
+        mesurer à des antagonistes qui défient l’imagination et les lois de
+        la physique. Parmis les derniers ennemis emblématiques que nous
+        avons pu voir au cinéma, on retrouve :
+      </p>
+      
+      <div class="showcases">
+        <div class="showcases__card">
+          <img
+            alt="Batman"
+            src="assets/images/illustrations/Home/Bathome5.png"
+          />
+          <div class="showcases__actor">
+            <figure>
               <img
-                alt="Batman"
-                src="assets/images/illustrations/Home/Bathome2.png"
+                alt="Paul Dano"
+                src="assets/images/illustrations/Home/Paul_Dano.png"
               />
-              <div class="showcases__actor">
-                <figure>
-                  <img
-                    alt="Robert Pattinson"
-                    src="assets/images/illustrations/Home/Robert_Pattinson.png"
-                  />
-
-                  <figcaption>
-                    Robert Pattinson <br />
-                    <small class="u-text-secondary">2022</small>
-                  </figcaption>
-                </figure>
+              
+              <figcaption>
+                The Riddler/Edward Nashton <br/>
+                <small class="u-text-secondary">Paul Dano - 2022</small>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        
+        <div class="showcases__card">
+          <img
+            alt="Batman"
+            src="assets/images/illustrations/Home/Bathome6.png"
+          />
+          <div class="showcases__actor">
+            <figure>
+              <img
+                alt="Heath Ledger"
+                src="assets/images/illustrations/Home/Heath_Ledger.png"
+              />
+              
+              <figcaption>
+                The Joker <br/>
+                <small class="u-text-secondary">Heath Ledger - 2008</small>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        
+        <div class="showcases__card">
+          <img
+            alt="Batman"
+            src="assets/images/illustrations/Home/Bathome7.png"
+          />
+          <div class="showcases__actor">
+            <figure>
+              <img
+                alt="Ray Porter"
+                src="assets/images/illustrations/Home/Ray_Porter.png"
+              />
+              
+              <figcaption>
+                Darkseid <br/>
+                <small class="u-text-secondary">Ray Porter - 2020</small>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section-multimedia u-bg-dark">
+    <div class="row">
+      <div class="slider">
+        <div class="section-multimedia__slide-changer" id="prev-slide">
+          <img
+            alt="prev"
+            src="assets/images/logos/Icones%20en%20+%20dans%20Home/icon_flèche_1.png"
+          />
+        </div>
+        <h2 class="titles">Multimédia</h2>
+        
+        <div class="video-slider u-text-margin-top" id="video-slider">
+          <div class="wrapper" id="video-slide-1">
+            <div class="video-slider__slide">
+              <div
+                class="video-slider__slide__img video-slider__slide__img--1"
+              ></div>
+              
+              <div class="video-slider__slide__about">
+                <p class="genre">Action, Adventure</p>
+                <p class="tittle">Batman Begins</p>
+                <p class="imdb">
+                  IMDB: <span class="u-text-secondary">8.2</span>
+                </p>
+                
+                <p class="simple-paragraph synopsys">
+                  Le jeune Bruce Wayne assiste impuissant au meurtre de ses
+                  parents. Profondément traumatisé, il grandit obnubilé par
+                  un désir de vengeance. La Ligue des ombres, une secte de
+                  guerriers ninja dirigée par Ra's al Ghul, se chargera de
+                  son entraînement. De retour chez lui à Gotham, avec l'aide
+                  de son majordome Alfred Pennyworth, Bruce Wayne se lance
+                  alors dans la lutte contre le crime sous le nom de Batman.
+                </p>
               </div>
             </div>
-
-            <div class="showcases__card">
-              <img
-                alt="Batman"
-                src="assets/images/illustrations/Home/Bathome3.png"
-              />
-              <div class="showcases__actor">
-                <figure>
-                  <img
-                    alt="Robert Pattinson"
-                    src="assets/images/illustrations/Home/Christian_Bale.png"
-                  />
-
-                  <figcaption>
-                    Christian Bale <br />
-                    <small class="u-text-secondary">2006-2008-2012</small>
-                  </figcaption>
-                </figure>
+          </div>
+          <div class="wrapper" id="video-slide-2">
+            <div class="video-slider__slide">
+              <div
+                class="video-slider__slide__img video-slider__slide__img--2"
+              ></div>
+              <div class="video-slider__slide__about">
+                <p class="genre">Action, Adventure</p>
+                <p class="tittle">The Dark Knight</p>
+                <p class="imdb">
+                  IMDB: <span class="u-text-secondary">9</span>
+                </p>
+                
+                <p class="simple-paragraph synopsys">
+                  Batman est plus que jamais déterminé à éradiquer le crime
+                  organisé qui sème la terreur en ville. Epaulé par le
+                  lieutenant Jim Gordon et par le procureur de Gotham City,
+                  Harvey Dent, Batman voit son champ d'action s'élargir. La
+                  collaboration des trois hommes s'avère très efficace et ne
+                  tarde pas à porter ses fruits jusqu'à ce qu'un criminel
+                  redoutable vienne plonger la ville de Gotham City dans le
+                  chaos.
+                </p>
               </div>
             </div>
-
-            <div class="showcases__card">
-              <img
-                alt="Batman"
-                src="assets/images/illustrations/Home/Bathome4.png"
-              />
-              <div class="showcases__actor">
-                <figure>
-                  <img
-                    alt="Robert Pattinson"
-                    src="assets/images/illustrations/Home/Ben_Affleck.png"
-                  />
-
-                  <figcaption>
-                    Ben Affleck <br />
-                    <small class="u-text-secondary">2016-2017/2020-2023</small>
-                  </figcaption>
-                </figure>
+          </div>
+          <div class="wrapper" id="video-slide-3">
+            <div class="video-slider__slide">
+              <div
+                class="video-slider__slide__img video-slider__slide__img--3"
+              ></div>
+              
+              <div class="video-slider__slide__about">
+                <p class="genre">Action, Adventure</p>
+                <p class="tittle">The Dark knight Rises</p>
+                <p class="imdb">
+                  IMDB: <span class="u-text-secondary">8.4</span>
+                </p>
+                
+                <p class="simple-paragraph synopsys">
+                  Il y a huit ans, Batman a disparu dans la nuit : lui qui
+                  était un héros est alors devenu un fugitif. L'arrivée
+                  d'une féline et fourbe cambrioleuse au mystérieux dessein
+                  chamboule l'ordre établi. Bien plus dangereuse encore est
+                  l'apparition de Bane, terroriste masqué dont l'impitoyable
+                  projet pour Gotham pousse Bruce à sortir de l'exil qu'il
+                  s'est imposé. Mais bien qu'il reprenne cape et masque,
+                  Batman pourrait ne pas être un adversaire à la taille de
+                  Bane...
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      <section class="section-slider u-bg-dark">
-        <div class="row"></div>
-      </section>
-
-      <section class="section-nemesis u-bg-dark">
-        <div class="row">
-          <h2 class="titles">NÉMÉSIS</h2>
-
-          <p class="simple-paragraph u-text-margin-top">
-            Batman souhaite éradiquer la criminalité de Gotham. C’est pourquoi,
-            il affrontera la plupart du temps, des vilains sans capacités
-            surnaturelles mais particulièrement violents ou psychopathes. Avec
-            son introduction dans la Justice League il aura l’occasion de se
-            mesurer à des antagonistes qui défient l’imagination et les lois de
-            la physique. Parmis les derniers ennemis emblématiques que nous
-            avons pu voir au cinéma, on retrouve :
-          </p>
-
-          <div class="showcases">
-            <div class="showcases__card">
-              <img
-                alt="Batman"
-                src="assets/images/illustrations/Home/Bathome5.png"
-              />
-              <div class="showcases__actor">
-                <figure>
-                  <img
-                    alt="Paul Dano"
-                    src="assets/images/illustrations/Home/Paul_Dano.png"
-                  />
-
-                  <figcaption>
-                    The Riddler/Edward Nashton <br />
-                    <small class="u-text-secondary">Paul Dano - 2022</small>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-
-            <div class="showcases__card">
-              <img
-                alt="Batman"
-                src="assets/images/illustrations/Home/Bathome6.png"
-              />
-              <div class="showcases__actor">
-                <figure>
-                  <img
-                    alt="Heath Ledger"
-                    src="assets/images/illustrations/Home/Heath_Ledger.png"
-                  />
-
-                  <figcaption>
-                    The Joker <br />
-                    <small class="u-text-secondary">Heath Ledger - 2008</small>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-
-            <div class="showcases__card">
-              <img
-                alt="Batman"
-                src="assets/images/illustrations/Home/Bathome7.png"
-              />
-              <div class="showcases__actor">
-                <figure>
-                  <img
-                    alt="Ray Porter"
-                    src="assets/images/illustrations/Home/Ray_Porter.png"
-                  />
-
-                  <figcaption>
-                    Darkseid <br />
-                    <small class="u-text-secondary">Ray Porter - 2020</small>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-          </div>
+        
+        <div class="section-multimedia__slide-changer" id="next-slide">
+          <img
+            alt="next"
+            src="assets/images/logos/Icones%20en%20+%20dans%20Home/icon_flèche_2.png"
+          />
         </div>
-      </section>
-
-      <section class="section-multimedia u-bg-dark">
-        <div class="row">
-          <div class="slider">
-            <div class="section-multimedia__slide-changer" id="prev-slide">
-              <img
-                alt="prev"
-                src="assets/images/logos/Icones%20en%20+%20dans%20Home/icon_flèche_1.png"
-              />
-            </div>
-            <h2 class="titles">Multimédia</h2>
-
-            <div class="video-slider u-text-margin-top" id="video-slider">
-              <div class="wrapper" id="video-slide-1">
-                <div class="video-slider__slide">
-                  <div
-                    class="video-slider__slide__img video-slider__slide__img--1"
-                  ></div>
-
-                  <div class="video-slider__slide__about">
-                    <p class="genre">Action, Adventure</p>
-                    <p class="tittle">Batman Begins</p>
-                    <p class="imdb">
-                      IMDB: <span class="u-text-secondary">8.2</span>
-                    </p>
-
-                    <p class="simple-paragraph synopsys">
-                      Le jeune Bruce Wayne assiste impuissant au meurtre de ses
-                      parents. Profondément traumatisé, il grandit obnubilé par
-                      un désir de vengeance. La Ligue des ombres, une secte de
-                      guerriers ninja dirigée par Ra's al Ghul, se chargera de
-                      son entraînement. De retour chez lui à Gotham, avec l'aide
-                      de son majordome Alfred Pennyworth, Bruce Wayne se lance
-                      alors dans la lutte contre le crime sous le nom de Batman.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="wrapper" id="video-slide-2">
-                <div class="video-slider__slide">
-                  <div
-                    class="video-slider__slide__img video-slider__slide__img--2"
-                  ></div>
-                  <div class="video-slider__slide__about">
-                    <p class="genre">Action, Adventure</p>
-                    <p class="tittle">The Dark Knight</p>
-                    <p class="imdb">
-                      IMDB: <span class="u-text-secondary">9</span>
-                    </p>
-
-                    <p class="simple-paragraph synopsys">
-                      Batman est plus que jamais déterminé à éradiquer le crime
-                      organisé qui sème la terreur en ville. Epaulé par le
-                      lieutenant Jim Gordon et par le procureur de Gotham City,
-                      Harvey Dent, Batman voit son champ d'action s'élargir. La
-                      collaboration des trois hommes s'avère très efficace et ne
-                      tarde pas à porter ses fruits jusqu'à ce qu'un criminel
-                      redoutable vienne plonger la ville de Gotham City dans le
-                      chaos.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="wrapper" id="video-slide-3">
-                <div class="video-slider__slide">
-                  <div
-                    class="video-slider__slide__img video-slider__slide__img--3"
-                  ></div>
-
-                  <div class="video-slider__slide__about">
-                    <p class="genre">Action, Adventure</p>
-                    <p class="tittle">The Dark knight Rises</p>
-                    <p class="imdb">
-                      IMDB: <span class="u-text-secondary">8.4</span>
-                    </p>
-
-                    <p class="simple-paragraph synopsys">
-                      Il y a huit ans, Batman a disparu dans la nuit : lui qui
-                      était un héros est alors devenu un fugitif. L'arrivée
-                      d'une féline et fourbe cambrioleuse au mystérieux dessein
-                      chamboule l'ordre établi. Bien plus dangereuse encore est
-                      l'apparition de Bane, terroriste masqué dont l'impitoyable
-                      projet pour Gotham pousse Bruce à sortir de l'exil qu'il
-                      s'est imposé. Mais bien qu'il reprenne cape et masque,
-                      Batman pourrait ne pas être un adversaire à la taille de
-                      Bane...
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="section-multimedia__slide-changer" id="next-slide">
-              <img
-                alt="next"
-                src="assets/images/logos/Icones%20en%20+%20dans%20Home/icon_flèche_2.png"
-              />
-            </div>
-          </div>
-
-          <div class="video-trailer">
-            <img
-              alt=""
-              src="assets/images/illustrations/Home/Bathome9_ba.png"
-            />
-          </div>
+      </div>
+      
+      <div class="video-trailer">
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen frameborder="0" height="420"
+                id="trailer-frame"
+                src="https://www.youtube.com/embed/jXrFsn9pcZY"
+                title="YouTube video player"
+                width="100%"
+        >
+        </iframe>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section-form normal-animation">
+    <div class="row">
+      <h2 class="titles">Prenons contact</h2>
+      
+      <form action="" id="newsletter-form">
+        <div class="form-group">
+          <label class="form-group__label" for="mail-input">
+            Adresse email
+          </label>
+          <input
+            class="form-group__input"
+            id="mail-input"
+            placeholder="Adresse email"
+            type="text"
+          />
         </div>
-      </section>
-
-      <section class="section-form">
-        <div class="row">
-          <h2 class="titles">Prenons contact</h2>
-
-          <form action="">
-            <div class="form-group">
-              <label class="form-group__label" for="mail-input">
-                Adresse email
-              </label>
-              <input
-                class="form-group__input"
-                id="mail-input"
-                placeholder="Adresse email"
-                type="text"
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="form-group__label" for="newsletter-input">
-                Adresse email
-              </label>
-              <span class="simple-paragraph">
+        
+        <div class="form-group">
+          <label class="form-group__label" for="newsletter-input">
+            Adresse email
+          </label>
+          <span class="simple-paragraph">
                 En cochant cette case vous acceptez de recevoir l’actualité
                 concernant les aventures de Batman :
               </span>
-              <input
-                class="form-group__input"
-                id="newsletter-input"
-                type="checkbox"
-              />
-              <select class="form-group__input">
-                <option value="">
-                  Choisissez la fréquence à laquelle vous souhaitez recevoir
-                  votre newsletter
-                </option>
-              </select>
-              <input
-                class="form-group__input"
-                placeholder="Souhaitez vous recevoir des news"
-                type="text"
-              />
-
-              <div class="btn-box">
-                <div class="btn gradient-btn"><span>Des films</span></div>
-                <div class="btn gradient-btn"><span>Des comics</span></div>
-                <div class="btn gradient-btn"><span>De Tout</span></div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-group__label" for="message-input">
-                Message
-              </label>
-              <input
-                class="form-group__input"
-                id="message-input"
-                placeholder="Laissez un commentaire pour la communauté"
-                type="text"
-              />
-            </div>
-
-            <div class="form-group">
-              <button class="btn btn-primary">Confirmer</button>
-            </div>
-          </form>
-        </div>
-      </section>
-
-      <section class="section-quotes u-bg-dark">
-        <div class="row">
-          <img
-            src="assets/images/logos/Icones en + dans Home/icon_guillemets_1.png"
-            class="quotes-img"
-            alt=""
+          <input
+            class="form-group__input"
+            id="newsletter-input"
+            type="checkbox"
           />
-          <img
-            src="assets/images/logos/Icones en + dans Home/icon_guillemets_2.png"
-            class="quotes-img"
-            alt=""
+          <div class="form-group form-group--dropdown" id="select-acc">
+            <img alt="" src="assets/images/logos/Icones%20en%20+%20dans%20Home/icon_flèche_1.png">
+            <input class="form-group__input"
+                   placeholder="Choisissez la fréquence à laquelle vous souhaitez recevoir votre newsletter"
+                   type="text">
+            
+            <ul class="panel">
+              <li>Une fois par semaines</li>
+              <li>Une fois toutes les deux semaines (2 fois par mois)</li>
+              <li>Une fois par mois</li>
+              <li>Une fois tous les trois mois</li>
+              <li>Une fois tous les 6 mois</li>
+            </ul>
+          </div>
+          <input
+            class="form-group__input"
+            placeholder="Souhaitez vous recevoir des news"
+            type="text"
           />
-          <div class="quotes-box">
-            <div class="quotes-box__quote">
-              <blockquote>
-                La seule façon raisonnable de vivre en ce bas monde, c'est en
-                dehors des règles.
-
-                <cite>
-                  The Dark Knight : Le Chevalier Noir Le Joker à Batman (2008)
-                </cite>
-              </blockquote>
-            </div>
-
-            <div class="quotes-box__navigation">
-              <a href="#">
-                <input name="quote-navigation" type="radio" />
-              </a>
-
-              <a href="#">
-                <input name="quote-navigation" type="radio" />
-              </a>
-
-              <a href="#">
-                <input name="quote-navigation" type="radio" />
-              </a>
-
-              <a href="#">
-                <input name="quote-navigation" type="radio" />
-              </a>
-
-              <a href="#">
-                <input name="quote-navigation" type="radio" />
-              </a>
-
-              <a href="#">
-                <input name="quote-navigation" type="radio" />
-              </a>
-
-              <a href="#">
-                <input name="quote-navigation" type="radio" />
-              </a>
-            </div>
+          
+          <div class="btn-box">
+            <div class="btn gradient-btn"><span>Des films</span></div>
+            <div class="btn gradient-btn"><span>Des comics</span></div>
+            <div class="btn gradient-btn"><span>De Tout</span></div>
           </div>
         </div>
-      </section>
-    </main>
-    <footer class="u-bg-dark">
-      <div class="row">
-        <p>
-          <img src="assets/images/logos/icon_WB.png" alt="Wanner Bross" />
-
-          <small
-            >Ce projet respecte l’univers cinématographique des films Batman
-            récents. Version Nolan & Snyder & Reeves</small
-          >
-        </p>
-
-        <nav class="footer-nav">
-          <div class="footer-nav__brand">
-            <img src="assets/images/logos/logo_sayna_white.png" alt="" />
-            <img src="assets/images/logos/icon_x.png" alt="" />
-            <img src="assets/images/logos/icon_DC.png" alt="" />
-          </div>
-
-          <ul class="footer-nav__nav">
-            <li class="footer-nav__nav__items">
-              <a href="#"><i class="lab la-twitter"></i></a>
-            </li>
-            <li class="footer-nav__nav__items">
-              <a href="#"> <i class="lab la-facebook"></i></a>
-            </li>
-            <li class="footer-nav__nav__items">
-              <a href="#"> <i class="lab la-instagram"></i></a>
-            </li>
-          </ul>
-        </nav>
+        
+        <div class="form-group">
+          <label class="form-group__label" for="message-input">
+            Message
+          </label>
+          <input
+            class="form-group__input"
+            id="message-input"
+            placeholder="Laissez un commentaire pour la communauté"
+            type="text"
+          />
+        </div>
+        
+        <div class="form-group">
+          <button class="btn btn-primary">Confirmer</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  
+  <section class="section-quotes u-bg-dark normal-animation">
+    <div class="row">
+      <img
+        alt=""
+        class="quotes-img"
+        src="assets/images/logos/Icones en + dans Home/icon_guillemets_1.png"
+      />
+      <img
+        alt=""
+        class="quotes-img"
+        src="assets/images/logos/Icones en + dans Home/icon_guillemets_2.png"
+      />
+      <div class="quotes-box">
+        <div class="quotes-box__quote">
+          <blockquote id="quotes-1">
+            La seule façon raisonnable de vivre en ce bas monde, c'est en
+            dehors des règles.
+            
+            <cite>
+              The Dark Knight : Le Chevalier Noir Le Joker à Batman (2008)
+            </cite>
+          </blockquote>
+          <blockquote id="quotes-2">
+            Soit on meurt en héros, soit on vit assez longtemps pour se voir endosser le rôle du méchant.
+            
+            <cite>
+              The Dark Knight: Le Chevalier Noir - Harvey Dent (2008)
+            </cite>
+          </blockquote>
+          <blockquote id="quotes-3">
+            Le héros peut être en chacun, même en celui qui fait une chose aussi simple et rassurante que mettre un
+            manteau sur les épaules d'un garçon et ainsi lui faire comprendre que le monde ne s'est pas écroulé.
+            
+            <cite>
+              The Dark Knight Rises - Batman à James Gordon (2012)
+            </cite>
+          </blockquote>
+          <blockquote id="quotes-4">
+            Ah ! Tu crois que l'obscurité est ton allié. Tu n'a fait qu'adopter la pénombre. Moi je suis né dedans, j'ai
+            été
+            façonné par elle. Je n'ai découvert la lumière qu'a l'âge d'homme, et alors, elle m'a juste paru AVEUGLANTE!
+            <cite>
+              The Dark Knight Rises - Bane à Batman (2012)
+            </cite>
+          </blockquote>
+          <blockquote id="quotes-5">
+            - Je vous prépare la batmoto monsieur ?
+            - En pleine journée Alfred ? Pas très subtile.
+            - La Lamborghini alors... beaucoup plus subtile.
+            <cite>
+              The Dark Knight: Le Chevalier Noir - Alfred et Batman (2008)
+            </cite>
+          </blockquote>
+          <blockquote id="quotes-6">
+            Freeze, t'es givré !
+            <cite>
+              Batman & Robin - Batman à Mr Freeze (1997)
+            </cite>
+          </blockquote>
+          <blockquote id="quotes-7">
+            La peur est un outil. Cette lumière qui déchire le ciel, ce n'est pas qu'un appel à l'aide. C'est un
+            avertissement.
+            <cite>
+              Batman - Batman (2022)
+            </cite>
+          </blockquote>
+          <blockquote id="quotes-8">
+            - Pourquoi tombons nous Bruce ?
+            - Pour mieux apprendre à nous relever.
+            <cite>
+              Batman Begins - Thomas Wayne à Bruce Wayne 8 ans (2005)
+            </cite>
+          </blockquote>
+          <blockquote id="quotes-9">
+            Des hommes tombent du ciel, les dieux crachent la foudre, des innoncents meurent. C'est comme cela que
+            ça commence, monsieur. De la fureur, de la fièvre, un sentiment d'impuissance, qui rend les hommes bien...
+            cruels.
+            <cite>
+              Batman v Superman : l'aube de la justice, Alfred à Batman (2016
+            </cite>
+          </blockquote>
+        </div>
+        
+        <div class="quotes-box__navigation">
+          <label for="quotes-check-1" onclick="window.location='/#quotes-1';">
+            <input checked id="quotes-check-1" name="quote-navigation" type="radio"/>
+          </label>
+          
+          <label for="quotes-check-2" onclick="window.location='/#quotes-2';">
+            <input id="quotes-check-2" name="quote-navigation" type="radio"/>
+          </label>
+          
+          <label for="quotes-check-3" onclick="window.location='/#quotes-3';">
+            <input id="quotes-check-3" name="quote-navigation" type="radio"/>
+          </label>
+          
+          <label for="quotes-check-4" onclick="window.location='/#quotes-4';">
+            <input id="quotes-check-4" name="quote-navigation" type="radio"/>
+          </label>
+          
+          <label for="quotes-check-5" onclick="window.location='/#quotes-5';">
+            <input id="quotes-check-5" name="quote-navigation" type="radio"/>
+          </label>
+          
+          <label for="quotes-check-6" onclick="window.location='/#quotes-6';">
+            <input id="quotes-check-6" name="quote-navigation" type="radio"/>
+          </label>
+          
+          <label for="quotes-check-7" onclick="window.location='/#quotes-7';">
+            <input id="quotes-check-7" name="quote-navigation" type="radio"/>
+          </label>
+          
+          <label for="quotes-check-8" onclick="window.location='/#quotes-8';">
+            <input id="quotes-check-8" name="quote-navigation" type="radio"/>
+          </label>
+          
+          <label for="quotes-check-9" onclick="window.location='/#quotes-9';">
+            <input id="quotes-check-9" name="quote-navigation" type="radio"/>
+          </label>
+        
+        </div>
       </div>
-    </footer>
-  </body>
+    </div>
+  </section>
+</main>
+<footer class="u-bg-dark normal-animation">
+  <div class="row">
+    <p>
+      <img alt="Wanner Bross" src="assets/images/logos/icon_WB.png"/>
+      
+      <small
+      >Ce projet respecte l’univers cinématographique des films Batman
+        récents. Version Nolan & Snyder & Reeves</small
+      >
+    </p>
+    
+    <nav class="footer-nav">
+      <div class="footer-nav__brand">
+        <img alt="" src="assets/images/logos/logo_sayna_white.png"/>
+        <img alt="" src="assets/images/logos/icon_x.png"/>
+        <img alt="" src="assets/images/logos/icon_DC.png"/>
+      </div>
+      
+      <ul class="footer-nav__nav">
+        <li class="footer-nav__nav__items">
+          <a href="#"><i class="lab la-twitter"></i></a>
+        </li>
+        <li class="footer-nav__nav__items">
+          <a href="#"> <i class="lab la-facebook"></i></a>
+        </li>
+        <li class="footer-nav__nav__items">
+          <a href="#"> <i class="lab la-instagram"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+</body>
 </html>

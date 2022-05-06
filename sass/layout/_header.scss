@@ -2,6 +2,8 @@
   height: 100vh;
   background-size: cover;
   color: $color-neutral-white;
+  background-position: center;
+  position: relative;
 
   &--home {
     background-image: url("../assets/images/illustrations/Home/Bathome1.png");
@@ -10,6 +12,12 @@
   .row {
     display: flex;
     flex-direction: column;
+    position: relative;
+    padding: 0 3.2rem;
+
+    @include media(mobile) {
+      padding: 0 1.2rem;
+    }
   }
 
   .headings {
@@ -18,7 +26,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    @include animate(leftToRight);
+    @include animate(leftToRight, false, 0);
 
     &__paragraph {
       width: 55%;
@@ -26,6 +34,10 @@
       line-height: 150%;
       font-weight: 300;
       font-size: 2rem;
+
+      @include media(second-break) {
+        width: 100%;
+      }
 
       span {
         display: block;
@@ -37,6 +49,10 @@
       margin-top: 4rem;
       display: flex;
       gap: 3.2rem;
+
+      @include media(second-break) {
+        display: none;
+      }
     }
   }
 

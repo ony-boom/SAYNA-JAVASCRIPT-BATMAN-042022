@@ -7,16 +7,50 @@
     font-weight: 300;
   }
 
-  select {
+  &--dropdown {
     color: $color-neutral-light-gray;
     margin-top: 2rem;
+    position: relative;
+
+    .panel {
+      display: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      background: $color-linear-bg;
+      list-style: none;
+
+      li {
+        background-color: transparent;
+        border-bottom: solid 1px rgba(255, 255, 255, 0.33);
+        padding: 1.28rem 1.8rem;
+        transition: all .3s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.15);
+        }
+      }
+    }
+
+    input {
+      cursor: pointer;
+    }
+
+    img {
+      position: absolute;
+      right: 0;
+      transform: rotate(-90deg);
+      height: 2rem;
+      cursor: pointer;
+    }
   }
 
-  select + input {
+  &--dropdown + input {
     margin-top: 2rem;
   }
 
-  input[type="text"], select {
+  input[type="text"] {
     width: 100%;
     background-color: transparent;
     outline: none;
@@ -24,6 +58,7 @@
     border-bottom: solid 1px rgba(255, 255, 255, 0.33);
     padding-bottom: 5px;
     font: inherit;
+    color: #fff;
 
     &::placeholder {
       color: rgba(255, 255, 255, 0.33);
@@ -45,5 +80,9 @@
     display: flex;
     gap: 2.4rem;
     justify-content: center;
+
+    @include media(second-break) {
+      flex-direction: column;
+    }
   }
 }

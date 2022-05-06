@@ -3,6 +3,13 @@ section {
 
   .row {
     padding: 10rem 5.6rem 5.6rem 5.6rem;
+    @include media(first-break) {
+      padding: 8rem 3.8rem;
+    }
+
+    @include media(mobile) {
+      padding: 8rem 1.2rem;
+    }
   }
 }
 
@@ -10,6 +17,7 @@ section {
   height: 56rem;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   animation: imageSlider 60s alternate infinite ease-in-out;
   backface-visibility: hidden;
 
@@ -27,14 +35,45 @@ section {
     position: absolute;
     top: 50%;
     cursor: pointer;
+    z-index: 50;
+    @include media(mobile) {
+      display: flex;
+      align-items: end;
+    }
+
+    img {
+      height: 3.2rem;
+    }
+
+    @include media(second-break) {
+      img {
+        width: 3.2rem;
+      }
+    }
   }
 
   #prev-slide {
     left: 0;
+    @include media(first-break) {
+      left: -8%;
+    }
+
+    @include media(mobile) {
+      bottom: -5%;
+      left: 20%;
+    }
   }
 
   #next-slide {
     right: 0;
+    @include media(first-break) {
+      right: -8%;
+    }
+
+    @include media(mobile) {
+      bottom: -5%;
+      right: 20%;
+    }
   }
 
   .video-slider {
@@ -60,11 +99,26 @@ section {
       background: $color-linear-bg;
       overflow: hidden;
       scroll-snap-align: center;
+      @include media(first-break) {
+        flex-direction: column;
+      }
+
+      @include media(second-break) {
+        width: 95%;
+      }
+
+      @include media(mobile) {
+        width: 100%;
+      }
 
       &__img {
         width: 40%;
         background-size: cover;
         background-position: center;
+        @include media(first-break) {
+          height: 12rem;
+          width: 100%;
+        }
 
         &--1 {
           background-image: url("../assets/images/illustrations/Home/Bathome8.png");
@@ -120,6 +174,9 @@ section {
     gap: 4.8rem;
     width: 60%;
     margin: 5.6rem auto 0 auto;
+    @include media(first-break) {
+      width: 100%;
+    }
 
     .form-group:last-child {
       text-align: center;
@@ -136,28 +193,46 @@ section {
     }
 
     img:first-of-type {
-      top: 12%; left: 8%;
+      top: 12%;
+      left: 8%;
     }
 
     img:last-of-type {
-      bottom: 0; right: 8%;
+      bottom: 0;
+      right: 8%;
     }
   }
+
   .quotes-box {
     width: 60%;
     margin: 0 auto;
     text-align: center;
     padding-top: 6.4rem;
+    @include media(first-break) {
+      width: 100%;
+    }
 
     &__quote {
       display: flex;
       overflow: hidden;
       margin-bottom: 3.2rem;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+
+      @include media(second-break) {
+        margin-bottom: 1.6rem;
+      }
 
       blockquote {
+        flex-basis: 100%;
+        flex-shrink: 0;
         flex-grow: 1;
         font-size: 2.2rem;
         line-height: 160%;
+        scroll-snap-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
         cite {
           display: block;
@@ -176,9 +251,12 @@ section {
       gap: 1.4rem;
       justify-content: center;
 
-      a:link, &:visited {
+      label {
         text-decoration: none;
-        pointer-events: none;
+        padding: 5px;
+        display: inline-grid;
+        place-items: center;
+        cursor: pointer;
 
         input {
           appearance: none;
@@ -189,7 +267,7 @@ section {
           border: solid 2px $color-secondary-blue;
           border-radius: 50%;
           transition: all .3s;
-          pointer-events: visible;
+          cursor: pointer;
 
           &:checked {
             background-color: $color-secondary-blue;
