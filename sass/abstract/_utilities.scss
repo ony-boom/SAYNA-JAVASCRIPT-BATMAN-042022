@@ -17,3 +17,7 @@
 .u-text-secondary {
   color: $color-primary-yellow;
 }
+
+.u-animate-paragraph {
+  @include animate(bottomToTop);
+}

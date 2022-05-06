@@ -1,4 +1,5 @@
 @import "abstract/variables";
+@import "abstract/mixins";
 @import "abstract/utilities";
 @import "base/animation";
 @import "base/reset";
@@ -9,3 +10,4 @@
 @import "components/button";
 @import "components/showcases";
 @import "components/form-group";
+@import "layout/footer"

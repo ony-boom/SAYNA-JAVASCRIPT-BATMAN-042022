@@ -7,10 +7,11 @@ section {
 }
 
 .section-slider {
-  height: 46rem;
+  height: 56rem;
   background-size: cover;
   background-repeat: no-repeat;
-  animation: imageSlider 60s alternate-reverse infinite ease-in-out;
+  animation: imageSlider 60s alternate infinite ease-in-out;
+  backface-visibility: hidden;
 
   .row {
     height: 100%;
@@ -38,7 +39,7 @@ section {
 
   .video-slider {
     display: flex;
-    overflow: auto;
+    overflow: hidden;
     scroll-snap-type: x mandatory;
 
     & > * {
@@ -127,10 +128,26 @@ section {
 }
 
 .section-quotes {
+  .row {
+    position: relative;
+
+    & > img {
+      position: absolute;
+    }
+
+    img:first-of-type {
+      top: 12%; left: 8%;
+    }
+
+    img:last-of-type {
+      bottom: 0; right: 8%;
+    }
+  }
   .quotes-box {
     width: 60%;
     margin: 0 auto;
     text-align: center;
+    padding-top: 6.4rem;
 
     &__quote {
       display: flex;
@@ -147,24 +164,32 @@ section {
           font-style: normal;
           color: $color-neutral-light-gray;
           font-size: 1.4rem;
-          margin-top: 2.4rem;
+          margin: 2.4rem auto 0 auto;
+          line-height: 140%;
+          width: 40%;
         }
       }
     }
 
     &__navigation {
+      display: flex;
+      gap: 1.4rem;
+      justify-content: center;
+
       a:link, &:visited {
         text-decoration: none;
+        pointer-events: none;
 
         input {
           appearance: none;
           -webkit-appearance: none;
-          height: 1.6rem;
-          width: 1.6rem;
+          height: 1rem;
+          width: 1rem;
           background-color: transparent;
-          border: solid 1px $color-secondary-blue;
+          border: solid 2px $color-secondary-blue;
           border-radius: 50%;
           transition: all .3s;
+          pointer-events: visible;
 
           &:checked {
             background-color: $color-secondary-blue;

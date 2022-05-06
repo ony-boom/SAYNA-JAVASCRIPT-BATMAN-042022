@@ -20,6 +20,10 @@
   color: #ffff00;
 }
 
+.u-animate-paragraph {
+  animation: bottomToTop 0.8s ease-in-out both;
+}
+
 @keyframes imageSlider {
   0% {
     background-image: url("../assets/images/illustrations/Home/Batslider1.png");
@@ -52,6 +56,26 @@
     background-image: url("../assets/images/illustrations/Home/Batslider10.png");
   }
 }
+@keyframes leftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes bottomToTop {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -73,6 +97,7 @@ body {
   max-width: 114rem;
   border: solid 3px rgba(255, 255, 255, 0.25);
   border-block: none;
+  overflow: hidden;
 }
 
 body {
@@ -87,6 +112,7 @@ body {
   font-size: 3.6rem;
   font-weight: 500;
   text-transform: uppercase;
+  animation: leftToRight 0.8s ease-in-out both;
 }
 
 .simple-paragraph {
@@ -118,6 +144,7 @@ section > .row > .simple-paragraph {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  animation: leftToRight 0.8s ease-in-out both;
 }
 .header .headings__paragraph {
   width: 55%;
@@ -168,10 +195,11 @@ section .row {
 }
 
 .section-slider {
-  height: 46rem;
+  height: 56rem;
   background-size: cover;
   background-repeat: no-repeat;
-  animation: imageSlider 60s alternate-reverse infinite ease-in-out;
+  animation: imageSlider 60s alternate infinite ease-in-out;
+  backface-visibility: hidden;
 }
 .section-slider .row {
   height: 100%;
@@ -193,7 +221,7 @@ section .row {
 }
 .section-multimedia .video-slider {
   display: flex;
-  overflow: auto;
+  overflow: hidden;
   scroll-snap-type: x mandatory;
 }
 .section-multimedia .video-slider > * {
@@ -265,10 +293,25 @@ section .row {
   text-align: center;
 }
 
+.section-quotes .row {
+  position: relative;
+}
+.section-quotes .row > img {
+  position: absolute;
+}
+.section-quotes .row img:first-of-type {
+  top: 12%;
+  left: 8%;
+}
+.section-quotes .row img:last-of-type {
+  bottom: 0;
+  right: 8%;
+}
 .section-quotes .quotes-box {
   width: 60%;
   margin: 0 auto;
   text-align: center;
+  padding-top: 6.4rem;
 }
 .section-quotes .quotes-box__quote {
   display: flex;
@@ -285,20 +328,29 @@ section .row {
   font-style: normal;
   color: #c4c4c4;
   font-size: 1.4rem;
-  margin-top: 2.4rem;
+  margin: 2.4rem auto 0 auto;
+  line-height: 140%;
+  width: 40%;
+}
+.section-quotes .quotes-box__navigation {
+  display: flex;
+  gap: 1.4rem;
+  justify-content: center;
 }
 .section-quotes .quotes-box__navigation a:link, .section-quotes .quotes-box__navigation:visited {
   text-decoration: none;
+  pointer-events: none;
 }
 .section-quotes .quotes-box__navigation a:link input, .section-quotes .quotes-box__navigation:visited input {
   appearance: none;
   -webkit-appearance: none;
-  height: 1.6rem;
-  width: 1.6rem;
+  height: 1rem;
+  width: 1rem;
   background-color: transparent;
-  border: solid 1px #19587d;
+  border: solid 2px #19587d;
   border-radius: 50%;
   transition: all 0.3s;
+  pointer-events: visible;
 }
 .section-quotes .quotes-box__navigation a:link input:checked, .section-quotes .quotes-box__navigation:visited input:checked {
   background-color: #19587d;
@@ -419,6 +471,43 @@ section .row {
   display: flex;
   gap: 2.4rem;
   justify-content: center;
+}
+
+footer {
+  color: #fff;
+}
+footer .row {
+  padding: 3.2rem 5.6rem;
+}
+footer p {
+  text-align: center;
+  margin-top: 3.2rem;
+}
+footer p img {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+footer .footer-nav {
+  margin-top: 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4.8rem;
+}
+footer .footer-nav__brand > * {
+  vertical-align: middle;
+}
+footer .footer-nav__brand > *:not(:last-child) {
+  margin-right: 1rem;
+}
+footer .footer-nav__nav {
+  display: flex;
+  gap: 2.4rem;
+  font-size: 2.8rem;
+  list-style: none;
+}
+footer .footer-nav__nav__items a:link, footer .footer-nav__nav__items a:visited {
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */
