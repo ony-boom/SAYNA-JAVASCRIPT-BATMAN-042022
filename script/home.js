@@ -1,4 +1,3 @@
-const subtitle = document.querySelectorAll(".subtitle");
 const trailerOutput = document.getElementById("trailer-frame");
 const videoSlides = document.querySelectorAll("div[id^=video-slide-]");
 const nextSynopsysBtn = document.getElementById("next-slide");
@@ -8,8 +7,7 @@ const modal = document.getElementById("modal");
 const modalBackdrop = document.getElementById("modal-backdrop");
 const accordion = document.querySelector("#select-acc img");
 
-const animatedEl = [...subtitle, ...animatedNormally];
-animatedEl.forEach(element => {
+animatedNormally.forEach(element => {
 	if (element) {
 		element.style.opacity = "0";
 	}
@@ -82,6 +80,3 @@ prevSynopsysBtn.addEventListener("click", () => {
 	handleMediaSlider(MEDIA_SLIDER_ACTION.prev);
 }, true);
 
-window.addEventListener("scroll", () => {
-	handleScroll(subtitle, "u-animate-paragraph");
-});

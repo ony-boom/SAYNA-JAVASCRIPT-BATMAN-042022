@@ -1,10 +1,11 @@
+const subtitle = document.querySelectorAll(".subtitle");
 const titles = document.querySelectorAll(".titles");
 const animatedNormally = document.querySelectorAll(".normal-animation");
 const hamMenu = document.getElementById("ham-menu");
 const links = document.querySelectorAll("#nav a");
 const zoomInEffect = document.querySelectorAll(".zoom-in");
 
-const elementToAnimate = [...titles, ...zoomInEffect];
+const elementToAnimate = [...titles, ...zoomInEffect, ...subtitle];
 
 elementToAnimate.forEach(el => {
 	el.style.opacity = "0";
@@ -106,6 +107,7 @@ window.onload = function () {
 
 window.addEventListener("scroll", () => {
 	handleScroll(titles, "u-animate-title");
+	handleScroll(subtitle, "u-animate-paragraph");
 	handleScroll(animatedNormally, "u-animate-normal");
 	handleScroll(zoomInEffect, "u-animate-image");
 });
