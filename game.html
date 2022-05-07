@@ -18,6 +18,7 @@
   />
   <link href="css/style.css" rel="stylesheet"/>
   <script defer src="script/app.js"></script>
+  <script defer src="script/api.js"></script>
   <title>BATMAN QUIZ</title>
 </head>
 <body class="u-bg-dark">
@@ -122,10 +123,32 @@ l-404 137 174 -177z"/>
   <section class="section-quiz section-quiz--1">
     <div class="row">
       <h2 class="titles">Quiz niveau 1</h2>
-      <p class="subtitle simple-paragraph">Coming Soon</p>
       <template id="quiz1-template">
-        <p class="simple-paragraph"></p>
+        <p class="simple-paragraph question"></p>
+        <ul class="choices">
+          <li class="choice choice-1">
+            <input name="choice" type="radio">
+            <label></label>
+          </li>
+          
+          <li class="choice choice-2">
+            <input name="choice" type="radio">
+            <label></label>
+          </li>
+          
+          <li class="choice choice-3">
+            <input name="choice" type="radio">
+            <label></label>
+          </li>
+          
+          <li class="choice choice-4">
+            <input name="choice" type="radio">
+            <label></label>
+          </li>
+        </ul>
       </template>
+      
+      <div id="root"></div>
     </div>
   </section>
   
