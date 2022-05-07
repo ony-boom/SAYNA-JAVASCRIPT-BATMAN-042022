@@ -4,7 +4,9 @@ const hamMenu = document.getElementById("ham-menu");
 const links = document.querySelectorAll("#nav a");
 const zoomInEffect = document.querySelectorAll(".zoom-in");
 
-zoomInEffect.forEach(el => {
+const elementToAnimate = [...titles, ...zoomInEffect];
+
+elementToAnimate.forEach(el => {
 	el.style.opacity = "0";
 })
 

@@ -8,7 +8,7 @@ const modal = document.getElementById("modal");
 const modalBackdrop = document.getElementById("modal-backdrop");
 const accordion = document.querySelector("#select-acc img");
 
-const animatedEl = [...titles, ...subtitle, ...animatedNormally];
+const animatedEl = [...subtitle, ...animatedNormally];
 animatedEl.forEach(element => {
 	if (element) {
 		element.style.opacity = "0";
