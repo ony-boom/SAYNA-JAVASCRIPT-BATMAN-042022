@@ -33,3 +33,7 @@
 .u-animate-normal {
   @include animate(fadeIn, false, 0)
 }
+
+.u-text-center {
+  text-align: center;
+}

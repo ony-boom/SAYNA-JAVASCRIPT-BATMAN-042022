@@ -40,6 +40,10 @@
   backface-visibility: hidden;
 }
 
+.u-text-center {
+  text-align: center;
+}
+
 @keyframes imageSlider {
   0% {
     background-image: url("../assets/images/illustrations/Home/Batslider1.png");
@@ -170,6 +174,7 @@ html {
 
 body {
   font-size: 1.6rem;
+  scroll-behavior: smooth;
 }
 
 .row {
@@ -682,12 +687,22 @@ section .row {
   background-color: #19587d;
 }
 
+.section-quiz--1 .simple-paragraph {
+  font-size: 2.4rem;
+  margin-top: 1.6rem;
+}
 .section-quiz--2 .illustration {
   margin-top: 3.2rem;
   text-align: center;
+  margin-bottom: 3.2rem;
 }
 .section-quiz--2 .illustration img {
   width: 100%;
+}
+
+.btn-link:link,
+.btn-link:visited {
+  color: #fff;
 }
 
 .btn {
