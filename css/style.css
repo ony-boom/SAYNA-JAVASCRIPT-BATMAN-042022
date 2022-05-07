@@ -122,6 +122,42 @@
     transform: translateY(0);
   }
 }
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateX(150%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -188,19 +224,23 @@ section > .row > .simple-paragraph {
   background-position: center;
   position: relative;
 }
-.header--home {
-  background-image: url("../assets/images/illustrations/Home/Bathome1.png");
-}
 .header .row {
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 0 3.2rem;
+}
+@media only screen and (max-width: 36em) {
+  .header .row {
+    padding: 0 3.2rem;
+  }
 }
 @media only screen and (max-width: 23.75em) {
   .header .row {
     padding: 0 1.2rem;
   }
+}
+.header--home {
+  background-image: url("../assets/images/illustrations/Home/Bathome1.png");
 }
 .header .headings {
   flex-grow: 1;
@@ -235,6 +275,35 @@ section > .row > .simple-paragraph {
 @media only screen and (max-width: 36em) {
   .header .headings__button-box {
     display: none;
+  }
+}
+.header--game {
+  background-image: url("../assets/images/illustrations/Game/Batgame1.png");
+}
+.header--game .headings {
+  justify-content: space-between;
+}
+@media only screen and (max-width: 23.75em) {
+  .header--game .headings {
+    position: relative;
+  }
+}
+.header--game .headings h1 {
+  align-self: start;
+  padding: 20% 0 0 4.8rem;
+  text-transform: uppercase;
+  font-size: 4.6rem;
+  font-family: "Rajdhani", sans-serif;
+  letter-spacing: 5px;
+}
+@media only screen and (max-width: 36em) {
+  .header--game .headings h1 {
+    padding: 0;
+    position: absolute;
+    width: 60%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
   }
 }
 .header .scroll-indicator {
@@ -279,6 +348,11 @@ section > .row > .simple-paragraph {
   font-size: 2.8rem;
   cursor: pointer;
 }
+.navigation__brand {
+  animation-name: fade;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
 .navigation__brand svg {
   height: 6.4rem;
   aspect-ratio: 16/9;
@@ -291,11 +365,6 @@ section > .row > .simple-paragraph {
   gap: 3.2rem;
   display: flex;
   list-style: none;
-}
-@media only screen and (max-width: 36em) {
-  .navigation__nav__list {
-    display: none;
-  }
 }
 .navigation__nav__list__item a {
   color: inherit;
@@ -310,6 +379,43 @@ section > .row > .simple-paragraph {
 }
 .navigation__nav__list__item a:visited {
   text-decoration-color: #fff;
+}
+.navigation__nav__list__item .active {
+  font-weight: bolder;
+  text-decoration-color: #fff;
+}
+
+@media only screen and (max-width: 36em) {
+  .mobile-hide {
+    display: none;
+  }
+}
+
+.show-nav {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 4.5rem;
+  transform: translate(-50%, -50%);
+  animation-name: appear;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-delay: 0.3s;
+}
+
+.hide-nav {
+  position: absolute;
+  left: 50%;
+  top: 4.5rem;
+  animation-name: disappear;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+.hide {
+  animation-name: fade-out;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
 }
 
 section {
@@ -576,6 +682,14 @@ section .row {
   background-color: #19587d;
 }
 
+.section-quiz--2 .illustration {
+  margin-top: 3.2rem;
+  text-align: center;
+}
+.section-quiz--2 .illustration img {
+  width: 100%;
+}
+
 .btn {
   height: 5.2rem;
   padding: 0 2.8em;
@@ -597,7 +711,7 @@ section .row {
 
 .gradient-btn {
   background: linear-gradient(120deg, rgba(237, 222, 191, 0.56), rgba(25, 88, 125, 0.56));
-  padding: 5px;
+  padding: 2px;
   font-size: 1.2rem;
   transition: all 0.3s;
 }

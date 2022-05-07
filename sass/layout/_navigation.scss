@@ -33,6 +33,10 @@
   }
 
   &__brand {
+    animation-name: fade;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+
     svg {
       height: 6.4rem;
       aspect-ratio: 16 / 9;
@@ -48,9 +52,6 @@
     gap: 3.2rem;
     display: flex;
     list-style: none;
-    @include media(second-break) {
-      display: none;
-    }
 
     &__item {
       a {
@@ -69,6 +70,44 @@
           text-decoration-color: #fff;
         }
       }
+
+      .active {
+        font-weight: bolder;
+        text-decoration-color: #fff;
+      }
     }
   }
+}
+
+.mobile-hide {
+  @include media(second-break) {
+    display: none;
+  }
+}
+
+.show-nav {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 4.5rem;
+  transform: translate(-50%, -50%);
+  animation-name: appear;
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  animation-delay: .3s;
+}
+
+.hide-nav {
+  position: absolute;
+  left: 50%;
+  top: 4.5rem;
+  animation-name: disappear;
+  animation-duration: .3s;
+  animation-fill-mode: both;
+}
+
+.hide {
+  animation-name: fade-out;
+  animation-duration: .3s;
+  animation-fill-mode: both;
 }

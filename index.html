@@ -18,6 +18,7 @@
   />
   <link href="css/style.css" rel="stylesheet"/>
   <script defer src="script/app.js"></script>
+  <script defer src="script/home.js"></script>
   <title>BATMAN</title>
 </head>
 <body class="u-bg-dark">
@@ -105,14 +106,14 @@ l-404 137 174 -177z"/>
         <i class="las la-bars" id="ham-menu"></i>
       </div>
       
-      <div class="navigation__nav">
-        <ul class="navigation__nav__list">
+      <div class="navigation__nav" id="nav">
+        <ul class="navigation__nav__list mobile-hide">
           <li class="navigation__nav__list__item">
             <a href="#">Home</a>
           </li>
           
           <li class="navigation__nav__list__item">
-            <a href="#">Game</a>
+            <a href="./game.html">Game</a>
           </li>
         </ul>
       </div>
@@ -154,7 +155,7 @@ l-404 137 174 -177z"/>
       </p>
       
       <div class="showcases">
-        <div class="showcases__card">
+        <div class="showcases__card zoom-in">
           <img
             alt="Batman"
             src="assets/images/illustrations/Home/Bathome2.png"
@@ -174,7 +175,7 @@ l-404 137 174 -177z"/>
           </div>
         </div>
         
-        <div class="showcases__card">
+        <div class="showcases__card zoom-in">
           <img
             alt="Batman"
             src="assets/images/illustrations/Home/Bathome3.png"
@@ -194,7 +195,7 @@ l-404 137 174 -177z"/>
           </div>
         </div>
         
-        <div class="showcases__card">
+        <div class="showcases__card zoom-in">
           <img
             alt="Batman"
             src="assets/images/illustrations/Home/Bathome4.png"
@@ -236,7 +237,7 @@ l-404 137 174 -177z"/>
       </p>
       
       <div class="showcases">
-        <div class="showcases__card">
+        <div class="showcases__card zoom-in">
           <img
             alt="Batman"
             src="assets/images/illustrations/Home/Bathome5.png"
@@ -256,7 +257,7 @@ l-404 137 174 -177z"/>
           </div>
         </div>
         
-        <div class="showcases__card">
+        <div class="showcases__card zoom-in">
           <img
             alt="Batman"
             src="assets/images/illustrations/Home/Bathome6.png"
@@ -276,7 +277,7 @@ l-404 137 174 -177z"/>
           </div>
         </div>
         
-        <div class="showcases__card">
+        <div class="showcases__card zoom-in">
           <img
             alt="Batman"
             src="assets/images/illustrations/Home/Bathome7.png"
@@ -310,7 +311,7 @@ l-404 137 174 -177z"/>
         </div>
         <h2 class="titles">Multimédia</h2>
         
-        <div class="video-slider u-text-margin-top" id="video-slider">
+        <div class="video-slider u-text-margin-top zoom-in" id="video-slider">
           <div class="wrapper" id="video-slide-1">
             <div class="video-slider__slide">
               <div

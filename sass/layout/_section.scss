@@ -277,3 +277,16 @@ section {
     }
   }
 }
+
+.section-quiz {
+  &--2 {
+    .illustration {
+      margin-top: 3.2rem;
+      text-align: center;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

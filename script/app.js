@@ -1,55 +1,12 @@
-const nextSynopsysBtn = document.getElementById("next-slide");
-const prevSynopsysBtn = document.getElementById("prev-slide");
-const videoSlides = document.querySelectorAll("div[id^=video-slide-]");
-const trailerOutput = document.getElementById("trailer-frame");
 const titles = document.querySelectorAll(".titles");
-const subtitle = document.querySelectorAll(".subtitle");
-const newsletterForm = document.getElementById("newsletter-form");
-const modal = document.getElementById("modal");
-const modalBackdrop = document.getElementById("modal-backdrop");
-const accordion = document.querySelector("#select-acc img");
+const animatedNormally = document.querySelectorAll(".normal-animation");
 const hamMenu = document.getElementById("ham-menu");
+const links = document.querySelectorAll("#nav a");
+const zoomInEffect = document.querySelectorAll(".zoom-in");
 
-
-const zoomInEffect = [
-	...document.querySelectorAll(".showcases__card"),
-	document.querySelector(".video-slider")
-];
-const animatedNormally = [
-	...document.querySelectorAll(".normal-animation"),
-	document.querySelector(".section-slider .row")
-];
-
-const animatedEl = [...titles, ...subtitle, ...zoomInEffect, ...animatedNormally];
-animatedEl.forEach(element => {
-	element.style.opacity = "0";
+zoomInEffect.forEach(el => {
+	el.style.opacity = "0";
 })
-
-const videoTrailersLink = [
-	"https://www.youtube.com/embed/jXrFsn9pcZY",
-	"https://www.youtube.com/embed/UMgb3hQCb08",
-	"https://www.youtube.com/embed/OiqPQ7L_C00"
-]
-
-const MEDIA_SLIDER_ACTION = {
-	next: "next", prev: "previous"
-}
-
-let currentSliderIdx = 0;
-let currentQuotesIdx = 0;
-
-function handleMediaSlider(action) {
-	switch (action) {
-		case MEDIA_SLIDER_ACTION.next:
-			currentSliderIdx < videoSlides.length - 1 ? currentSliderIdx++ : currentSliderIdx = 0;
-			break;
-		case MEDIA_SLIDER_ACTION.prev:
-			currentSliderIdx > 0 ? currentSliderIdx-- : currentSliderIdx = videoSlides.length - 1;
-			break;
-	}
-	videoSlides[currentSliderIdx].scrollIntoView({behavior: "smooth"});
-	trailerOutput.src = videoTrailersLink[currentSliderIdx];
-}
 
 /**
  * "Renvoie vrai si le haut de l'élément est dans la fenêtre, sinon renvoie faux."
@@ -101,57 +58,52 @@ function handleScroll(nodeList, className) {
 	})
 }
 
-function handleSubmit(event) {
-	event.preventDefault();
-	modal.classList.remove("hidden");
-}
-
-function removeModal(event) {
-	modal.classList.add("remove");
+function toggleMenu(event) {
+	const icon = event.target;
+	const nav = event.target.parentElement.nextElementSibling.querySelector("ul");
+	const brand = document.querySelector(".navigation__brand");
+	brand.classList.toggle("hide");
 	
-	setTimeout(() => {
-		modal.classList.replace("remove", "hidden");
-	}, 300);
-}
-
-nextSynopsysBtn.addEventListener("click", () => {
-	handleMediaSlider(MEDIA_SLIDER_ACTION.next);
-}, true);
-
-prevSynopsysBtn.addEventListener("click", () => {
-	handleMediaSlider(MEDIA_SLIDER_ACTION.prev);
-}, true);
-
-newsletterForm.addEventListener("submit", handleSubmit);
-modalBackdrop.addEventListener("click", removeModal, false);
-
-accordion.addEventListener("click", () => {
-	const panel = document.querySelector(".panel");
+	if (icon.classList.contains("la-bars")) {
+		icon.classList.replace("la-bars", "la-times");
+	} else {
+		icon.classList.replace("la-times", "la-bars");
+	}
 	
-	if (panel.style.display === "block") {
+	if (nav.classList.contains("show-nav")) {
 		setTimeout(() => {
-			panel.style.display = "block";
-		}, 500);
+			nav.classList.add("mobile-hide");
+			nav.classList.remove("hide-nav");
+		}, 500)
+		nav.classList.remove("show-nav");
+		nav.classList.add("hide-nav");
 	} else {
-		panel.style.display = "block";
+		nav.classList.remove("mobile-hide");
+		nav.classList.remove("hide-nav");
+		nav.classList.add("show-nav");
 	}
-	
-	if (panel.style.maxHeight) {
-		panel.style.maxHeight = null;
-	} else {
-		panel.style.maxHeight = panel.scrollHeight + "px";
-	}
-})
-
-function toggleMobileMenu() {
-
 }
 
-hamMenu.addEventListener("click", toggleMobileMenu)
+hamMenu.addEventListener("click", toggleMenu);
+
+links.forEach((link, idx) => {
+	link.addEventListener("click", () => {
+		sessionStorage.setItem("currentPage", link.textContent.trim());
+		link.classList.add("active");
+	})
+});
+
+window.onload = function () {
+	const currentPage = sessionStorage.getItem("currentPage");
+	links.forEach((link, idx) => {
+		if (currentPage === link.textContent.trim()) {
+			link.classList.add("active");
+		}
+	});
+}
 
 window.addEventListener("scroll", () => {
 	handleScroll(titles, "u-animate-title");
-	handleScroll(subtitle, "u-animate-paragraph");
-	handleScroll(zoomInEffect, "u-animate-image");
 	handleScroll(animatedNormally, "u-animate-normal");
+	handleScroll(zoomInEffect, "u-animate-image");
 });
