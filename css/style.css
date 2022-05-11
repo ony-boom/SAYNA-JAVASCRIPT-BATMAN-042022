@@ -1043,7 +1043,7 @@ footer .footer-nav__nav__items a:hover {
 #root {
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+  gap: 4.8rem;
 }
 
 .question {
@@ -1060,7 +1060,7 @@ footer .footer-nav__nav__items a:hover {
   align-items: center;
   background-color: rgba(255, 255, 255, 0.3);
   padding: 1.2rem;
-  max-width: 25rem;
+  max-width: 30rem;
 }
 .choices .choice label {
   cursor: pointer;

@@ -123,29 +123,19 @@ l-404 137 174 -177z"/>
   <section class="section-quiz section-quiz--1">
     <div class="row">
       <h2 class="titles">Quiz niveau 1</h2>
+      <p id="load">Chargement...</p>
       <template id="quiz1-template">
-        <p class="simple-paragraph question"></p>
-        <ul class="choices">
-          <li class="choice choice-1">
-            <input name="choice" type="radio">
-            <label></label>
-          </li>
-          
-          <li class="choice choice-2">
-            <input name="choice" type="radio">
-            <label></label>
-          </li>
-          
-          <li class="choice choice-3">
-            <input name="choice" type="radio">
-            <label></label>
-          </li>
-          
-          <li class="choice choice-4">
-            <input name="choice" type="radio">
-            <label></label>
-          </li>
-        </ul>
+        <div class="quiz">
+          <p class="simple-paragraph question"></p>
+          <ul class="choices">
+            <template id="answer-template">
+              <li class="choice choice-1">
+                <input name="choice" type="radio">
+                <label></label>
+              </li>
+            </template>
+          </ul>
+        </div>
       </template>
       
       <div id="root"></div>
