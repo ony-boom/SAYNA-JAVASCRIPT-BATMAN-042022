@@ -24,7 +24,6 @@ function setRadioBtnClick() {
 	const allRadio = document.querySelectorAll("input[type=radio]");
 	allRadio.forEach(radio => {
 		radio.addEventListener("click", (event) => {
-			const parent = event.target.parentElement;
 			const label = event.target.nextElementSibling;
 			setChosenAnswer(+label.dataset.answerId, +label.dataset.quizId - 1);
 		})
@@ -78,7 +77,6 @@ const outputData = (quizs) => {
 		root.append(container);
 	}
 }
-
 
 const setData = async () => {
 	const data = await getData();

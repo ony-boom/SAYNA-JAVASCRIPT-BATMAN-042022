@@ -1,0 +1,3 @@
+https://plankton-app-mj9br.ondigitalocean.app/questions
+https://plankton-app-mj9br.ondigitalocean.app/questions/:id
+https://plankton-app-mj9br.ondigitalocean.app/questions/all
