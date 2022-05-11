@@ -279,8 +279,16 @@ section {
 }
 
 .section-quiz {
+  button {
+    margin-top: 3.2rem;
+  }
+
   &--1 {
     #root {
+      margin-top: 3.2rem;
+    }
+
+    #score-output {
       margin-top: 3.2rem;
     }
   }

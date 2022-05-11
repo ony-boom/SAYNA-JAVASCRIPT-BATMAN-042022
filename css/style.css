@@ -687,7 +687,13 @@ section .row {
   background-color: #19587d;
 }
 
+.section-quiz button {
+  margin-top: 3.2rem;
+}
 .section-quiz--1 #root {
+  margin-top: 3.2rem;
+}
+.section-quiz--1 #score-output {
   margin-top: 3.2rem;
 }
 .section-quiz--2 .illustration {
@@ -711,6 +717,7 @@ section .row {
   color: inherit;
   cursor: pointer;
   min-width: 14rem;
+  max-width: 30rem;
 }
 
 .btn-primary {
