@@ -111,3 +111,4 @@ window.addEventListener("scroll", () => {
 	handleScroll(animatedNormally, "u-animate-normal");
 	handleScroll(zoomInEffect, "u-animate-image");
 });
+

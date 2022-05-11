@@ -1,0 +1,45 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+}
+
+.question {
+  font-size: 2rem;
+}
+
+.choices {
+  list-style: none;
+  margin-top: 2.4rem;
+
+  .choice {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 1.2rem;
+    max-width: 30rem;
+
+    label {
+      cursor: pointer;
+    }
+
+    input {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 1.6rem;
+      width: 1.6rem;
+      border-radius: 2px;
+      background: #fff;
+      cursor: pointer;
+
+      &:checked {
+        background-color: $color-secondary-blue;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}
