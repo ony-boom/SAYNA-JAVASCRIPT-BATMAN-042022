@@ -20,6 +20,7 @@
     padding: 1.2rem;
     max-width: 30rem;
 
+
     label {
       cursor: pointer;
     }
@@ -41,5 +42,10 @@
     &:not(:last-child) {
       margin-bottom: 1rem;
     }
+  }
+
+  .false-answer {
+    background-color: rgba(255, 17, 17, 0.7);
+    text-decoration: line-through;
   }
 }

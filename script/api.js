@@ -24,17 +24,39 @@ function importTemplate(templateName) {
 	return tempToExport;
 }
 
-function checkAnswer(list, answerId, quizId) {
+function resetClickedState(radioId, parentId) {
+	const allRadio = document.querySelectorAll(`input[id^=response_of_quiz_${parentId}--no]`);
+	
+	allRadio.forEach(radio => {
+		if (radio.id !== radioId) {
+			radio.dataset.clicked = "false";
+		}
+	})
+}
+
+function checkAnswer(list, answerId, quizId, event) {
+	const {target} = event;
 	started = true;
 	if (quizId !== currentQuiz) {
 		if (list[answerId].isGood) {
-			score++;
+			score = target.dataset.clicked === "false" ? ++score : score;
 		} else {
 			notGoodResponseList.push(quizId);
-			return
+		}
+	} else {
+		if (list[answerId].isGood) {
+			notGoodResponseList = notGoodResponseList.filter(idx => idx !== quizId);
+			score = target.dataset.clicked === "false" ? ++score : score;
+		} else {
+			if (!notGoodResponseList.includes(quizId)) {
+				notGoodResponseList.push(quizId);
+			}
+			if (score && target.dataset.clicked === "false") --score;
 		}
 	}
 	currentQuiz = quizId;
+	target.dataset.clicked = "true";
+	resetClickedState(target.id, target.closest("div").id);
 }
 
 function outputAnswer(quizEl, answerList) {
@@ -42,16 +64,17 @@ function outputAnswer(quizEl, answerList) {
 	const answerEl = importTemplate("answer");
 	
 	for (const answer of answerList) {
-		const currentAnwser = answerList.indexOf(answer);
-		const id = `response_of_quiz_${parentElement.parentElement.id}--no_${currentAnwser}`;
+		const currentAnswer = answerList.indexOf(answer);
+		const id = `response_of_quiz_${parentElement.parentElement.id}--no_${currentAnswer}`;
 		const newAnswer = answerEl.cloneNode(true);
 		const radioBtn = newAnswer.querySelector("input");
 		const label = newAnswer.querySelector("label");
 		radioBtn.id = id;
+		radioBtn.dataset.clicked = "false";
 		radioBtn.name = `choice_of_quiz_${parentElement.parentElement.id}`;
 		label.setAttribute("for", id);
 		
-		radioBtn.addEventListener("click", checkAnswer.bind(null, answerList, currentAnwser, +parentElement.parentElement.id));
+		radioBtn.addEventListener("click", checkAnswer.bind(null, answerList, currentAnswer, +parentElement.parentElement.id));
 		
 		label.textContent = answer.text;
 		parentElement.append(newAnswer);
@@ -84,11 +107,21 @@ async function outputQuestion() {
 	}
 }
 
+function yellNotGoodResponse(idx) {
+	const notGoodResponseEl = document.getElementById(idx);
+	const allRadio = notGoodResponseEl.querySelectorAll("input");
+	allRadio.forEach(radio => {
+		if (radio.checked) {
+			radio.closest("li").classList.add("false-answer");
+		}
+	});
+	
+}
+
 function outputScore() {
-	started = false;
 	if (notGoodResponseList.length > 0) {
 		for (const response of notGoodResponseList) {
-			console.log(quizList[response]);
+			yellNotGoodResponse(response);
 		}
 	}
 	const outputEl = document.getElementById("score-output");
@@ -96,6 +129,7 @@ function outputScore() {
 	if (started) {
 		outputEl.textContent = `Vous avez eu ${score} bonne reponses`;
 	}
+	started = false;
 }
 
 function output() {
